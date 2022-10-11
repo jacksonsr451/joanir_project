@@ -1,0 +1,13 @@
+default:
+    TITLE: Blog
+    SQLALCHEMY_DATABASE_URI: sqlite:///db.sqlite
+    SQLALCHEMY_TRACK_MODIFICATIONS: false
+
+    EXTENSIONS:
+        - src.framework.ext.flask_admin:init_app
+
+production:
+    SQLALCHEMY_DATABASE_URI: postgresql://blog:blog@db/blog
+
+testing:
+    SQLALCHEMY_DATABASE_URI: sqlite:///testdb.sqlite
