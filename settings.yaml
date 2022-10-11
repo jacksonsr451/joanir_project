@@ -3,8 +3,14 @@ default:
     SQLALCHEMY_DATABASE_URI: sqlite:///db.sqlite
     SQLALCHEMY_TRACK_MODIFICATIONS: false
 
+    FLASK_ADMIN_SWATCH: pulse
+
     EXTENSIONS:
+        - src.framework.ext.flask_sqlalchemy:init_app
+        - src.framework.ext.flask_migrate:init_app
         - src.framework.ext.flask_admin:init_app
+        - src.framework.ext.flask_simple_login:init_app
+        - src.framework.blueprints:init_app
 
 production:
     SQLALCHEMY_DATABASE_URI: postgresql://blog:blog@db/blog
